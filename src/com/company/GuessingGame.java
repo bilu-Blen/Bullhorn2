@@ -14,15 +14,26 @@ public class GuessingGame {
 
         while (j <= 10) {
             j++;
-            System.out.println("I have chosen a number between 1 and 10. Try to guess it.");
+            System.out.println("I have chosen a number. Try to guess it.");
 
             Scanner scan = new Scanner(System.in);
             int i = scan.nextInt();
             scan.nextLine();
             System.out.println("Your guess:" + i);
-            if (num == i) {
-            } else {
-                System.out.println("That's is incorrect. Guess again");
+            if(i <=1)
+            {
+                System.out.println("The number you entered is very low please, try again");
+            }
+            else if( i >=18) 
+            {
+                System.out.println("The number you entered is very high, try again");
+            }
+            else if(num == i)
+            {
+                System.out.println("That's is Correct. You are a good guesser");
+            }else
+            {
+                System.out.println("That is incorrect. Guess again");
             }
         }
     }
