@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head  th:replace="~{base/base.html::headstuff}">
+    <meta charset="UTF-8">
+    <title>Sign-up</title>
+</head>
+<body>
+<nav th:replace="~{base/base.html::navfragment}"></nav>
+<div class="bg">
+    <div class="well">
+
+    <h1>Sign-up page</h1>
+    <form th:action="@{/signup}" th:object="${newUser}" method="post">
+        <label>First name:</label>
+        <span th:if="${#fields.hasErrors('firstName')}" th:class="invalid"></span><input type="text" th:field="*{firstName}" /></br>
+
+        <label>Last name:</label>
+        <span th:if="${#fields.hasErrors('lastName')}" th:class="invalid"></span><input type="text" th:field="*{lastName}" /> <br>
+
+        <label>Email</label>
+        <span th:if="${#fields.hasErrors('email')}" th:class="invalid"></span><input type="text" th:field="*{email}" /> <br>
+
+        <label>Username:</label>
+        <span th:if="${#fields.hasErrors('username')}" th:class="invalid"></span><input type="text" th:field="*{username}" /> <br>
+
+        <label>Password:</label>
+        <span th:if="${#fields.hasErrors('password')}" th:class="invalid"></span><input type="password" th:field="*{password}" /> <br>
+
+        <label>Hobby</label>
+        <span th:if="${#fields.hasErrors('hobbie')}" th:class="invalid"></span><input type="text" th:field="*{hobbie}" /><br>
+
+        <input type="submit" value="Sign-up">
+
+    </form>
+    </div>
+
+</div>
+
+    <span th:replace ="~{base/base.html::scripts}"></span>
+
+</body>
+</html>
