@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head  th:replace="~{base/base.html::headstuff}">
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<nav th:replace="~{base/base.html::navfragment}"></nav>
+<div class="bg">
+    <div class="well">
+
+    <h1>This is user's profile</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>email</th>
+            <th>Hobbies</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.hobbie}"></td>
+            <td th:text="${user.image}"></td>
+        </tr>
+
+    </table>
+    </div>
+</div>
+
+    <span th:replace ="~{base/base.html::scripts}"></span>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("https://cdn.pixabay.com/photo/2015/03/26/10/58/apple-692186_1280.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

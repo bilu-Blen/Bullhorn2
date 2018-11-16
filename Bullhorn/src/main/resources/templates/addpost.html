@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="~{base/base.html::headstuff}">
+    <meta charset="UTF-8">
+    <title>Sign-up</title>
+</head>
+<body>
+<nav th:replace="~{base/base.html::navfragment}"></nav>
+<div class="bg">
+    <div class="well">
+        <h1>Sign-up page</h1>
+        <form th:action="@{/addpost}" th:object="${newPost}" method="post">
+            <label>Title:</label>
+            <span th:if="${#fields.hasErrors('title')}" th:class="invalid"></span><input type="text" th:field="*{title}" />
+
+            <label>Content</label>
+            <span th:if="${#fields.hasErrors('content')}" th:class="invalid"></span><input type="text" th:field="*{content}" />
+
+            <label>Image</label>
+            <input type="file" name="fileImage">
+            <label>Date:</label>
+            <span th:if="${#fields.hasErrors('date')}" th:class="invalid"></span><input type="date" th:field="*{date}" />
+
+
+            <input type="submit" value="Add Post">
+
+        </form>
+    </div>
+
+</div>
+
+<span th:replace ="~{base/base.html::scripts}"></span>
+
+</body>
+</html>
